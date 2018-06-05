@@ -43,6 +43,7 @@ var eventKeyCode = 13;
 //     console.log("Unrecognized key press"); 
 // }
 
+// If/else converted to switch statement
 switch(eventKeyCode) {
     case 13: {
         console.log("The enter key was pressed"); 
