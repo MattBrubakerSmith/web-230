@@ -51,18 +51,18 @@ var test = 7;
 // for loop
 console.log("-- Displaying for loop --");
 
-// for(let i = 0; i < 10; i++) {
-//     // Creates new random number every iteration
-//     var randNumber = randomNumber();
+for(let i = 0; i < 10; i++) {
+    // Creates new random number every iteration
+    var randNumber = randomNumber();
 
-//     // Compares random number to test case
-//     if(randNumber === test) {
-//         logMatch(randNumber, test);
-//     }
-//     else {
-//         logMismatch(randNumber, test);
-//     }
-// }
+    // Compares random number to test case
+    if(randNumber === test) {
+        logMatch(randNumber, test);
+    }
+    else {
+        logMismatch(randNumber, test);
+    }
+}
 
 // while loop
 console.log("\n-- Displaying while loop --"); 
