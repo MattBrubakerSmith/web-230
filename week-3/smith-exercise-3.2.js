@@ -58,7 +58,6 @@ var test6 = 1.7;
 // Creates header
 console.log(header.display("Matthew", "Smith", "Exercise 3.2"));
 
-
 // Output from the match() function... 
 console.log(match("A", "B"));
 console.log(match(2, 2)); 
