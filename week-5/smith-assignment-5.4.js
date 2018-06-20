@@ -80,21 +80,27 @@ var famousComposers = [
 ]
 
 var composersByRating = famousComposers.map(function(composer) {
-    return composer.rating;
+    return { 
+        rating: composer.rating,
+        lastName: composer.lastName
+    }
 });
 
 var composersByGenre = famousComposers.map(function(composer) {
-    return composer.genre;
+    return { 
+        genre: composer.genre,
+        lastName: composer.lastName
+    }
 });
 
 console.log("-- COMPOSER BY RATING --");
-composersByRating.forEach(function(rating, index) {
-    console.log("Rating: " + rating + "\nComposer: " + famousComposers[index].lastName);
+composersByRating.forEach(function(composer) {
+    console.log("Rating: " + composer.rating + "\nComposer: " + composer.lastName);
 });
 
 console.log("-- COMPOSER BY GENRE --");
-composersByGenre.forEach(function(genre, index) {
-    console.log("Genre: " + genre + "\nComposer: " + famousComposers[index].lastName);
+composersByGenre.forEach(function(composer) {
+    console.log("Genre: " + composer.genre + "\nComposer: " + composer.lastName);
 });
 
 
