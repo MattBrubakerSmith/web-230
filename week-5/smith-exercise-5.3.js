@@ -5,8 +5,8 @@
 ; Date: 20 June 2018
 ; Modified By: Matthew Smith
 ; Description: This program demonstrates
-; how to iterate over arrays with the 
-; built-in forEach() method.
+; how to iterate over array-like objects 
+; with the built-in forEach() method.
 ;===========================================
 */ 
 
