@@ -1,0 +1,98 @@
+<!--
+; Title: Assignment 8.3
+; Author: Professor Krasso
+; Date: 10 July 2018
+; Modified By: Matthew Smith
+; Description: This exercise demonstrates
+; how to register click events on DOM
+; elements using jQuery.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Click</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<div id="toggled-content">
+    <h2>
+        Toggle Example
+    </h2>
+    <p>
+        Bacon ipsum dolor amet cupim pork belly frankfurter, leberkas short loin salami rump turkey fatback ham alcatra brisket buffalo pork chop filet mignon. Venison swine meatball filet mignon strip steak. Pork chop tenderloin turducken tongue prosciutto strip steak turkey t-bone chuck salami fatback andouille leberkas meatball shankle. Ribeye flank shoulder tenderloin tri-tip andouille tail fatback capicola beef drumstick t-bone. Spare ribs pork loin sausage porchetta shankle swine ham hock alcatra cow sirloin fatback tail leberkas pastrami pork.
+    </p>
+    <p>
+        Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
+    </p>
+
+    <button id="toggle-button">
+        Toggle Content
+    </button>
+</div>
+
+<br/>
+<table id="fruit-table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+<script>
+    $(function () {
+        // Toggles second paragraph in #toggled-content div.
+        $("#toggle-button").click(function() {
+            $("#toggled-content > p:last").toggle();
+        });
+        
+        // Fruit object array
+        var fruits = [
+            { 
+                id: 1,
+                type: "Oranges"
+            },
+            { 
+                id: 2,
+                type: "Apples"
+            }, 
+            { 
+                id: 3,
+                type: "Pears"
+            }, 
+            { 
+                id: 4,
+                type: "Limes"
+            }, 
+            { 
+                id: 5,
+                type: "Lemons"
+            }
+        ];
+
+        // Iterate over fruits, create a table row, and assign a click function to each fruit id
+        fruits.forEach(function(fruit) {
+            var fruitRow = "<tr><td><a href='#' id='fruit" + fruit.id + "'>" + fruit.id + "</a></td><td>" + fruit.type + "</td></tr>";
+            $("#fruit-table tbody").append(fruitRow);
+            $("#fruit" + fruit.id).click(function() {
+                alert("{fruit_id: " + fruit.id + ", fruit_type: " + fruit.type + "}");
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
