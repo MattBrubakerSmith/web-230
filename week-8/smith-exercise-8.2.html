@@ -1,0 +1,60 @@
+<!--
+; Title: Assignment 8.2
+; Author: Professor Krasso
+; Date: 10 July 2018
+; Modified By: Matthew Smith
+; Description: This exercise demonstrates
+; how to dynamically create HTML elements
+; using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic HTML</title>
+
+    <link rel="stylesheet" href="../site.css">
+    <style>
+        #fruits ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="fruits"></div>
+
+<script>
+    var fruits = [
+        { 
+            id: 1,
+            type: "Oranges"
+        },
+        { 
+            id: 2,
+            type: "Apples"
+        }, 
+        { 
+            id: 3,
+            type: "Pears"
+        }, 
+        { 
+            id: 4,
+            type: "Limes"
+        }, 
+        { 
+            id: 5,
+            type: "Lemons"
+        }
+        ];
+    var out = "<h2>Shopping List</h2><ul>";
+    for (var x = 0; x < fruits.length; x++) {
+        out += "<li>" + fruits[x].id + ": " + fruits[x].type + "</li>";
+    }
+    out += "</ul>";
+    document.getElementById('fruits').innerHTML = out;
+</script>
+
+</body>
+</html>
