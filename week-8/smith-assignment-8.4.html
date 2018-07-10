@@ -1,0 +1,85 @@
+<!--
+; Title: Assignment 8.4
+; Author: Professor Krasso
+; Date: 10 July 2018
+; Modified By: Matthew Smith
+; Description: This exercise demonstrates
+; how to put together the JS/jQuery techniques we
+; have learned this week.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8.4</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../site.css">
+
+    <style type="text/css">
+        #employee tbody tr:hover {
+            cursor: pointer;
+            background-color: #ffff99;
+        }
+    </style>
+</head>
+<body>
+
+<div id="emps"></div>
+
+<script type="text/javascript">
+    // employee constructor object
+    function Employee(id, firstName, lastName, title) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+    }
+    // employee array
+    var employees = [
+        new Employee(1, "Thomas", "Edison", "Software Engineer"),
+        new Employee(2, "Benjamin", "Franklin", "Programmer"),
+        new Employee(3, "Nikola", "Tesla", "Project Manager"),
+        new Employee(4, "Charles", "Babbage", "Product Manager"),
+        new Employee(5, "Stringer", "Bell", "Business Analyst")
+    ];
+    // getEmployee(id) function
+    function getEmployee(id) {
+        employees.forEach(function(emp) {
+            if(emp.id === id) {
+                alert(emp.id + " " + emp.firstName + " " + emp.lastName + " " + emp.title);
+                return;
+            }
+        });
+    }
+    // output string variable
+    var output = "<h1>Employee Listing</h1>";
+        output += "<table id='employee'>";
+        output += "<thead><tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Title</th></tr></thead>";
+        output += "<tbody>";
+        
+    // for loop
+    employees.forEach(function(emp) {
+        output += "<tr><td>" + emp.id + "</td>";
+        output += "<td>" + emp.firstName + "</td>";
+        output += "<td>" + emp.lastName + "</td>";
+        output += "<td>" + emp.title + "</td></tr>";
+    });
+
+    output += "<tbody>";
+    
+    // innerHTML call
+    document.getElementById("emps").innerHTML = output;
+
+    // jQuery onClick event
+    $(function () {
+        $("table tr").click(function () {
+            var id = $(this).find("td:first").html();
+            getEmployee(parseInt(id));
+        });
+    });
+</script>
+</body>
+</html>
