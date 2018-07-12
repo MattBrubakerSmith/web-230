@@ -1,0 +1,71 @@
+<!--
+; Title: Assignment 9.4
+; Author: Matthew Smith
+; Date: 12 July 2018
+; Description: This assignment demonstrates
+; how to use client-side debugging in Chrome.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Client-Side Debugging with Chrome</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #crappy-calculator {
+            width: 250px;
+            margin: 0 auto;
+        }
+        label {
+            float: left;
+        }
+        input, select {
+            float: right;
+            width: 40px;
+        }
+        input:hover, select:hover, button:hover {
+            outline: 2px solid orangered;
+        }
+        input:focus {
+            outline: 2px solid olivedrab;
+        }
+        button, #result {
+            float: right;
+        }
+        #result {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #result:hover {
+            color: steelblue;
+            font-style: italic;
+            text-decoration: underline tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client-Side Debugging with Chrome</h1>
+    <div id="crappy-calculator">
+        <label for="number1">Enter a number:</label>
+        <input id="number1" type="number">
+        <br><br>
+        <label for="number2">Enter another number:</label>
+        <input id="number2" type="number">
+        <br><br>
+        <label for="operator">Choose an operator:</label>
+        <select id="operator">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <br><br>
+        <button id="calculate-btn" onclick="Calculate()">Calculate</button>
+        <br>
+        <p>Result: <span id="result"></span></p>
+    </div>
+    <script src="smith-assignment-9.4.js"></script>
+</body>
+</html>
